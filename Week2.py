@@ -41,12 +41,13 @@ def lucky_number(name):
     number = len(name) * 9
     print("Hello " + name + " your lucky numer is " + str(number))
 
+
 lucky_number("Ana")
 lucky_number("Kay")
 
 # comparations
 
-print(10>1)
+print(10 > 1)
 print("cat" == "dog")
 print(1 != 2)
 print("cat" > "Cat")
@@ -55,3 +56,38 @@ print("cat" > "Cat")
 
 print("Yellow" > "Cyan" and "Brown" > "Magenta")
 print(25 > 50 or 1 != 2)
+print(not 42 == "Answer")
+
+
+# Branching
+
+def hint_username(username):
+    if len(username) < 3:
+        print("Invalid username. Must be at least 3 characters long")
+    else:
+        print("Valid username")
+
+
+hint_username("Ana")
+
+
+def is_even(number):
+    if number % 2 == 0:
+        return True
+    return False
+
+
+print(is_even(3))
+
+
+# Elif statement
+
+def hint_username2(username):
+    if len(username) < 3:
+        print("Invalid username. Must be at least 3 characters long")
+    elif len(username) > 15:
+        print("Invalid username: Must be at most 15 characters long")
+    else:
+        print("Valid username")
+
+print("big" > "small")
