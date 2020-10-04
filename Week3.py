@@ -55,3 +55,16 @@ for left in range(7):
     for right in range(left, 7):
         print("[" + str(left) + "|" + str(right) + "]", end=" ")
     print()
+
+# recursion
+
+def factorial(n):
+    print("Factorial called with " + str(n))
+    if n < 2:
+        print("Returning 1")
+        return 1
+    result = n * factorial(n-1)
+    print("Returning " + str(result) + " for factorial of " + str(n))
+    return result
+
+factorial(4)
