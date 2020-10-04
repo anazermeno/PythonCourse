@@ -1,5 +1,6 @@
 # while loops
 
+
 x = 0
 while x < 5:
     print("Not there yet, x=" + str(x))
@@ -48,3 +49,9 @@ friends = ['Taylor', 'Alex', 'Pat', 'Eli']
 
 for friend in friends:
     print("Hi " + friend)
+
+# nested for loops
+for left in range(7):
+    for right in range(left, 7):
+        print("[" + str(left) + "|" + str(right) + "]", end=" ")
+    print()
