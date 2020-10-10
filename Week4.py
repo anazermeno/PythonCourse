@@ -30,7 +30,7 @@ fruit = "Pineapple"
 print(fruit[:4])  # from start to pos 3
 print(fruit[4:])  # from pos 4 to end
 
-# strings in python are inmutable = cannot be changed
+# strings in python are immutable = cannot be changed
 
 # Fixing a typo
 
@@ -58,3 +58,28 @@ def replace_domain(email, old_domain, new_domain):
         new_email = email[:index] + "@" + new_domain
         return new_email
     return email
+
+# More string methods
+
+# Changing all letters to Upper
+
+print("Mountains".upper())
+
+# Changing all letters to lower
+
+print("Mountains".lower())
+
+# Strip method - erases surrounding spaces in strings
+# .lstrip - spaces in the left
+# .rstrip - spaces in the right
+
+print(" yes ".strip())
+
+# Count method - counts how many time a letter/word/symbol appears in a string
+
+print("The number of times e occurs in this string is 4".count("e"))
+
+# .isnumeric - tells if a variable is a number
+
+print("Forest".isnumeric())
+print("1234".isnumeric())
