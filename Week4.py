@@ -59,6 +59,7 @@ def replace_domain(email, old_domain, new_domain):
         return new_email
     return email
 
+
 # More string methods
 
 # Changing all letters to Upper
@@ -83,3 +84,109 @@ print("The number of times e occurs in this string is 4".count("e"))
 
 print("Forest".isnumeric())
 print("1234".isnumeric())
+
+# .join - adding parts of a string
+
+print(" ".join(["This", "is", "a", "phrase"]))
+print("...".join(["This", "is", "a", "phrase", "with", "triple", "dots"]))
+
+# .split - returns a list with the words in a string
+
+print("This is another string".split()[-1])  # ['This', 'is', 'another', 'string']
+
+
+def initials(phrase):
+    words = phrase.split()
+    result = ""
+    for word in words:
+        result += word[0].upper()
+    return result
+
+
+print(initials("Universal Serial Bus"))  # Should be: USB
+print(initials("local area network"))  # Should be: LAN
+print(initials("Operating system"))  # Should be: OS
+
+
+# .format
+
+def student_grade(name, grade):
+    return "{} received {}% on the exam".format(name, grade)
+
+
+print(student_grade("Reed", 80))
+print(student_grade("Paige", 92))
+print(student_grade("Jesse", 85))
+
+# another example of .format
+
+price = 7.5
+with_tax = price * 1.09
+print("Base price ${:.2f}. With tax: ${:.2f}".format(price, with_tax))
+
+
+# another example
+
+def to_celsius(x):
+    return (x - 32) * 5 / 9
+
+
+for x in range(0, 101, 20):
+    print("{:>3} F | {:>6.2f} C".format(x, to_celsius(x)))
+
+input_string = "hola"
+
+for letter in input_string:
+    print(letter)
+
+
+def is_palindrome(input_string):
+    # created two empty strings, to compare them
+    new_string = ""
+    reverse_string = ""
+    # traversing through each letter of input string
+    for i in input_string:
+        if i != "":
+            # adding non blank letters to end of new_string
+            new_string = new_string.strip() + i
+            # adding non blank letters to start of reverse_string
+            reverse_string = i + reverse_string.strip()
+    # Compare the strings
+    if new_string.lower() == reverse_string.lower():
+        return True
+    return False
+
+
+print(is_palindrome("Never Odd or Even"))  # Should be True
+print(is_palindrome("abc"))  # Should be False
+print(is_palindrome("kayak"))  # Should be True
+
+
+# lists
+
+def get_word(sentence, n):
+    # Only proceed if n is positive
+    if n > 0:
+        words = sentence.split()
+        # Only proceed if n is not more than the number of words
+        if n <= len(words):
+            return (words[n - 1])
+    return ("")
+
+
+print(get_word("This is a lesson about lists", 4))  # Should print: lesson
+
+# Modifying elements in a list
+
+# append method
+
+fruits = ["Pineapple", "Banana", "Apple", "Melon"]
+
+fruits.append("kiwi")  # ["Pineapple", "Banana", "Apple", "Melon", "kiwi"]
+
+fruits.insert(0, "orange")  # ["Orange", "Pineapple", "Banana", "Apple", "Melon", "kiwi"]
+
+fruits.remove("Melon")
+
+fruits.pop(3)   # Apple
+
