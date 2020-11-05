@@ -190,3 +190,13 @@ fruits.remove("Melon")
 
 fruits.pop(3)   # Apple
 
+# Strings - sequences of characters and are INMUTABLE
+
+# Lists - sequences of elements of any type, and are MUTABLE
+
+# Tuple - sequences of elements of any type, that are INMUTABLE
+
+fullname = ('Grace', 'M', 'Hopper')
+
+
+
