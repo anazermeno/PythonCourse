@@ -1,6 +1,8 @@
 # Strings
 
 # Can use single or double quotes
+from typing import List, Any
+
 name = "Sasha"
 color = 'red'
 
@@ -188,7 +190,7 @@ fruits.insert(0, "orange")  # ["Orange", "Pineapple", "Banana", "Apple", "Melon"
 
 fruits.remove("Melon")
 
-fruits.pop(3)   # Apple
+fruits.pop(3)  # Apple
 
 # Strings - sequences of characters and are INMUTABLE
 
@@ -199,4 +201,71 @@ fruits.pop(3)   # Apple
 fullname = ('Grace', 'M', 'Hopper')
 
 
+def convert_seconds(seconds):
+    hours = seconds // 3600
+    minutes = (seconds - hours * 3600) // 60
+    remaining_seconds = seconds - hours * 3600 - minutes * 60
+    return hours, minutes, remaining_seconds
 
+
+result = convert_seconds(5000)
+print(type(result))
+print(result)
+
+# Spliting the elements of teh tuple into separate variables
+
+hours, minutes, seconds = convert_seconds(1000)
+print (hours, minutes, seconds)
+
+
+# Example using tuples, store information about a file: its name, its type and its size in bytes
+
+def file_size(file_info):
+    name, type, size = file_info
+    return "{:.2f}".format(size / 1024)
+
+
+print(file_size(('Class Assignment', 'docx', 17875)))
+
+# Iterating over Lists and Tuples
+
+animals = ["lion", "Zebra", "Dolphin", "Monkey"]
+chars = 0
+
+for animal in animals:
+    chars += len(animal)
+
+print("Total characters: {}, Average length: {}".format(chars, chars / len(animals)))
+
+# Using index
+
+winners = ["Ashley", "Dylan", "Reese"]
+
+for index, person in enumerate(winners):
+    print("{} - {}".format(index + 1, person))
+
+
+# Example - using index - exercise 1
+
+def skip_elements(elements):
+    result = []
+    for index, element in enumerate(elements):
+        if index % 2 == 0:
+            result.append(element)
+
+    return result
+
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"]))  # Should be ['a', 'c', 'e', 'g']
+
+# Example - using index - exercise 2
+
+def full_emails(people):
+    result = []
+
+    for name, email in people:
+        result.append("{} - <{}>".format(name, email))
+    return result
+
+
+print(full_emails([()]))
